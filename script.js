@@ -184,13 +184,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-<script>
+/* ── Register Service Worker ── */
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
       .register("./sw.js")
-      .then(() => console.log("Service Worker aktif"))
-      .catch(err => console.error("SW gagal:", err));
+      .then((registration) => {
+        console.log("Service Worker aktif", registration);
+      })
+      .catch((err) => {
+        console.error("SW gagal:", err);
+      });
   });
 }
-</script>

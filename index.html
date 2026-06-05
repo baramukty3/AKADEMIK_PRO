@@ -578,15 +578,5 @@
   <div class="toast" id="toast" role="alert" aria-live="polite" aria-atomic="true"></div>
 
   <script src="script.js"></script>
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("./sw.js")
-      .then(() => console.log("Service Worker aktif"))
-      .catch(err => console.error("SW gagal:", err));
-  });
-}
-</script>
 </body>
 </html>
